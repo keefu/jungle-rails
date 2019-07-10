@@ -83,6 +83,13 @@ cat1.products.create!({
   price: 224.50
 })
 
+cat1.products.create!({
+  name:  'Men\'s T-shirt',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('apparel7.png'),
+  quantity: 0,
+  price: 34.99
+})
 
 cat2.products.create!({
   name:  'Modern Skateboards',
