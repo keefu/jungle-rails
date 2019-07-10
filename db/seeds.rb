@@ -84,7 +84,7 @@ cat1.products.create!({
 })
 
 cat1.products.create!({
-  name:  'Men\'s T-shirt',
+  name:  'Sleeping Barry T-shirt',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel7.png'),
   quantity: 0,
