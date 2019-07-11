@@ -85,4 +85,7 @@ main section.products-show {
   }
 }
 
-
+tbody tr td {
+  display: flex;
+  justify-content: space-between;
+}
