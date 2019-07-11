@@ -44,7 +44,17 @@
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           <% end %>
         </li>
-        <li><%= link_to "Sign Up", new_user_path %></li>
+        <li>
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, class: "alert alert-info" %></li>
+        <% end %>
+        <% if current_user %>
+        <li>Logged in as <%= current_user.email %>.
+        <%= link_to "Log Out", sessions_path("current"), method: :delete %>   
+        </li> 
+        <% else %>
+        <span><%= link_to "Sign Up", register_path %> or <%= link_to "Log In", login_path %></span>
+        <% end %>
       </ul>
     </div>
   </div>
