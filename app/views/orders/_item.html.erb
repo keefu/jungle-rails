@@ -8,12 +8,11 @@
     </td>
 
     <td>
-        <%= product.price %>
+        <%= number_to_currency(product.price) %>
     </td>
 <% line_item_info = LineItem.find_by(order_id: @order.id, product_id: product.id) %>
-<% total = ((line_item_info.total_price_cents) / 100.00) * (line_item_info.quantity) %>
-    <td>Quantity:<%= line_item_info.quantity %></td>
-    <td><%= number_to_currency(total)%></td> 
+    <td><%= line_item_info.quantity %></td>
+    <td><%= number_to_currency((line_item_info.total_price_cents) / 100.00)%></td> 
 </tr>
     
 <% end %>
