@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
     validates :email, :password, :password_confirmation, presence: true
 
     validates_uniqueness_of :email
+
 end
