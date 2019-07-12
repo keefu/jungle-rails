@@ -37,8 +37,11 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  def authorize
-    redirect_to '/login' unless current_user
+  protected
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+    username == ENV['HTTP_AUTH_NAME'] && password == ENV['HTTP_AUTH_PASSWORD']
+    end
   end
 
 end
