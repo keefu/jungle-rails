@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
       )
     end
     if order.save!
-      OrderMailer.order_email(current_user).deliver_now
+      OrderMailer.order_email(order).deliver_now
     end
     order
   end

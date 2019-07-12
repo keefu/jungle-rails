@@ -4,7 +4,15 @@
    <meta content=‘text/html; charset=UTF-8’ http-equiv=‘Content-Type’ />
  </head>
  <body>
-   <h1> Email Order has been sent! </h1>
-
+   <h1>Order Confirmation</h1>
+   <p>
+     <% @order.line_items.each do |item| %>
+       <%= Product.find_by(id: item.product_id).name %>
+     <% end %>
+   </p>
+   <p>
+     Order total: <%= @order.total_cents / 100.0 %>
+   </p>
+   <p>Thank you for shopping at Jungle!</p>
  </body>
 </html>
