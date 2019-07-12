@@ -1,0 +1,20 @@
+<tr>
+<% products.each do |product| %>
+    <td><%= image_tag product.image.tiny %></td>
+        <td><h4><%= product.name %></h4>
+        <br>
+        <p><%= product.description %></p>
+    </td>
+
+    <td>
+        <%= product.price %>
+    </td>
+<% line_item_info = LineItem.find_by(order_id: @order.id, product_id: product.id) %>
+<% total = ((line_item_info.total_price_cents) / 100.00) * (line_item_info.quantity) %>
+    <td>Quantity:<%= line_item_info.quantity %></td>
+    <td><%= number_to_currency(total)%></td> 
+    
+<% end %>
+</tr>
+    
+<%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
