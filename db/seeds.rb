@@ -145,8 +145,8 @@ Product.all.each do |product|
     # creating a review associated with products
     product.reviews.create!(
       rating: rand(5) + 1, 
-      description: Faker::Hipster.paragraph(1),
-      user_id: 1 )
+      description: Faker::Movies::HarryPotter.quote,
+      user_id: rand(User.all.count) + 1 )
   end
 end
 

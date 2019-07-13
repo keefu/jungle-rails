@@ -26,16 +26,23 @@
           <% if @average.to_i == 0 %> 
           <dd>This product has not been rated yet.</dd>
           <% else %>
-            <dd><%= @average.to_i %>/5</dd>
+            <dd><%= @average.round(1) %>/5</dd>
           <% end %>
         </dl>
       </div>
     </div>
     <%= render 'reviews' %>
-    <h3 class="page-header"> Reviews: </h3>
+    <h2 class="page-header">Reviews</h2>
     <br/>
-    <% @reviews.each do |review| %>
-      <%= render 'ratings', rating: review.rating, description: review.description, user: review.user_id, created_at: review.created_at  %>
-    <% end %>
+    <div class="col-sm-8">
+      <dl class="dl-horizontal">
+        <% @reviews.each do |review| %>
+          <dd><%= render 'ratings', rating: review.rating, description: review.description, user: review.user_id, created_at: review.created_at  %> 
+        <% if current_user == review.user %>
+          <%= link_to fa_icon('trash'), review_path(review.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+          Delete Review</dd> 
+        <% end %>
+      <% end %>
+    </dl>
   </article>
 </section>
