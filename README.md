@@ -31,17 +31,28 @@ Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
+Bcrypt
 
-#Bcrypt
-#Bootstrap
-#Byebug
-#Faker
-#jQuery-Rails
-#Money-Rails
-#PostgreSQL 9.x
-#Puma
-#Rails 4.2 Rails Guide
-#RMagick
-#Sass
-#Spring
-#Stripe
+Bootstrap
+
+Byebug
+
+Faker
+
+jQuery-Rails
+
+Money-Rails
+
+PostgreSQL 9.x
+
+Puma
+
+Rails 4.2 Rails Guide
+
+RMagick
+
+Sass
+
+Spring
+
+Stripe
