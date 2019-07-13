@@ -1,7 +1,16 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 for purposes of learning Rails.
 
+## Feature
+1. Implement SoldOut
+2. Admin can add or delete category
+3. User Authentification 
+4. Admin Authentification
+5. Order page with descriptive details
+6. Implement email receipt
+7. Empty cart checkout notice
+8. Product Review from users 
 
 ## Setup
 
@@ -23,6 +32,16 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe
+Bcrypt
+Bootstrap
+Byebug
+Faker
+jQuery-Rails
+Money-Rails
+PostgreSQL 9.x
+Puma
+Rails 4.2 Rails Guide
+RMagick
+Sass
+Spring
+Stripe
