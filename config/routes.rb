@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create'
   delete '/sessions', to: 'sessions#destroy'
 
-  
+  post '/products/:product_id/reviews', to: 'reviews#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

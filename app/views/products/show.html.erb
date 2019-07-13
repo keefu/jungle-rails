@@ -26,8 +26,7 @@
           <% if @average.to_i == 0 %> 
           <dd>This product has not been rated yet.</dd>
           <% else %>
-          <h4><dt>Product Rating</dt>
-            <dd><%= @average.to_i %> out of 5</dd></h4>
+            <dd><%= @average.to_i %>/5</dd>
           <% end %>
         </dl>
       </div>
@@ -36,7 +35,7 @@
     <h3 class="page-header"> Reviews: </h3>
     <br/>
     <% @reviews.each do |review| %>
-      <%= render 'ratings', rating: review.rating, description: review.description, user: review.user_id, user: review.user.name, created_at: review.created_at  %>
+      <%= render 'ratings', rating: review.rating, description: review.description, user: review.user_id, created_at: review.created_at  %>
     <% end %>
   </article>
 </section>
