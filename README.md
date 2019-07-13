@@ -32,16 +32,16 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-Bcrypt
-Bootstrap
-Byebug
-Faker
-jQuery-Rails
-Money-Rails
-PostgreSQL 9.x
-Puma
-Rails 4.2 Rails Guide
-RMagick
-Sass
-Spring
-Stripe
+#Bcrypt
+#Bootstrap
+#Byebug
+#Faker
+#jQuery-Rails
+#Money-Rails
+#PostgreSQL 9.x
+#Puma
+#Rails 4.2 Rails Guide
+#RMagick
+#Sass
+#Spring
+#Stripe
