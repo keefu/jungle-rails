@@ -33,6 +33,7 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 
 puts "Re-creating Products ..."
 
+Review.destroy_all
 Product.destroy_all
 
 cat1.products.create!({
@@ -139,5 +140,14 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+Product.all.each do |product|
+  3.times do
+    # creating a review associated with products
+    product.reviews.create!(
+      rating: rand(5) + 1, 
+      description: Faker::Hipster.paragraph(1),
+      user_id: 1 )
+  end
+end
 
-puts "DONE!"
+puts "DONE!" 
