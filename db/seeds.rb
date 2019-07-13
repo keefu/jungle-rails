@@ -142,7 +142,7 @@ cat3.products.create!({
 
 Product.all.each do |product|
   3.times do
-    # creating a review associated with products
+    # create a review associated with products
     product.reviews.create!(
       rating: rand(5) + 1, 
       description: Faker::Movies::HarryPotter.quote,
