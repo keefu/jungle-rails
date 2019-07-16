@@ -28,5 +28,15 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user).to_not be_valid
     end
+    it 'validates password length' do
+      user.valid?
+      user.password = "12"
+      expect(user).to_not be_valid
+    end
+    it 'validates password length' do
+      user.valid?
+      user.password = "password"
+      expect(user).to be_valid
+    end
   end
 end
