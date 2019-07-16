@@ -31,12 +31,21 @@ RSpec.describe User, type: :model do
     it 'validates password length' do
       user.valid?
       user.password = "12"
+      user.password_confirmation = "12"
       expect(user).to_not be_valid
     end
     it 'validates password length' do
       user.valid?
-      user.password = "password"
+      user.password = "123"
+      user.password_confirmation = "123"
       expect(user).to be_valid
     end
   end
+  
+  describe 'authenticate_with_credentials' do
+    it 'Authenticate with a valid email and password' do
+      user.save
+      expect(User.authenticate_with_credentials('thisisat@got.com','password')).to be_truthy
+    end 
+  end 
 end
