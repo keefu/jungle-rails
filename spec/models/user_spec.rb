@@ -48,4 +48,10 @@ RSpec.describe User, type: :model do
       expect(User.authenticate_with_credentials('thisisat@got.com','password')).to be_truthy
     end 
   end 
+  describe 'authenticate_with_credentials' do
+    it 'is case sensitive authentication' do
+      user.save
+      expect(User.authenticate_with_credentials('ThisIsAt@GOT.com','password')).to be_truthy
+    end
+  end
 end
